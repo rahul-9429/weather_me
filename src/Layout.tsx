@@ -9,7 +9,7 @@ const Layout = ({children}: PropsWithChildren) => {
         </main>
         <footer className="border-t backdrop-blur"> 
             <div className='container mx-auto px-4 py-8 text-center text-gray-500'>
-            <p>Built with Shadcn ui.</p></div>
+            <p className='text-sm'>Built with Shadcn ui.</p></div>
         </footer>
         </div>
   )

@@ -1,5 +1,4 @@
 import type { Coordinates } from "@/api/types"
-import { get } from "http";
 import { useEffect, useState } from "react";
 interface GeolocationState{
     coordinates: Coordinates | null;

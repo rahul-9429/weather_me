@@ -6,7 +6,7 @@ import { AlertCircle } from "lucide-react"
 import {Skeleton} from '@/components/ui/skeleton'
 import CurrentWeather from '@/components/ui/currentWeather'
 import { WeatherDetails } from '@/components/ui/weather_details'
-
+import {FavoriteCities} from '@/components/ui/favorite-cities'
 import {
   Alert,
   AlertDescription,
@@ -23,8 +23,8 @@ console.log(coordinates);
 const locationQuery = useReverseGeoCodeQuery(coordinates);
 const forecastQuery = useForecastQuery(coordinates);
 const weatherQuery = useWeather(coordinates);
- console.log("fcku", weatherQuery.data)
-console.log(locationQuery, forecastQuery, weatherQuery);
+//  console.log("", weatherQuery.data)
+// console.log(locationQuery, forecastQuery, weatherQuery);
 
 const handleRefresh=()=>{
   getLocation();
@@ -72,10 +72,12 @@ if(!weatherQuery.data || !forecastQuery.data){
   return <Skeleton/>;
 }
 
-console.log(locationName);
+// console.log(locationName);
   return (
     <div className='space-y-4 '>
       {/* Favourite City */}
+      <FavoriteCities/>
+      {/* Current Weather */}
       <div className='flex justify-between items-center'>
         <h1 className='text-xl font-bold tracking-tight'>My Location</h1>
         <Button variant={'outline'}

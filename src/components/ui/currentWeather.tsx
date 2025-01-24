@@ -7,9 +7,9 @@ import { ArrowDown, ArrowUp, Droplets, Wind } from "lucide-react";
 
 interface CurrentWeatherProps {
     data: WeatherData,
-    location?: GeocodingResponse;
+    locationName?: GeocodingResponse;
 }
-const currentWeather = ({ data, locationName}) => {
+const currentWeather = ({ data, locationName}: CurrentWeatherProps) => {
 const {
     weather:[currentWeather],
     main: {temp,feels_like, temp_min, temp_max, humidity},
@@ -26,7 +26,7 @@ const formatTemp = (temp: number)=> `${Math.round(temp)}°`;
             <div className="space-y-2">
                 <div className="flex items-end gap-1">
                     <h2 className="text-2xl font-bold tracking-tighter">{locationName?.name}</h2>
-                    {locationName.state &&(<span className="text-muted-foreground">
+                    {locationName &&(<span className="text-muted-foreground">
                         ,{locationName.state}
                     </span>)}
                 </div>
